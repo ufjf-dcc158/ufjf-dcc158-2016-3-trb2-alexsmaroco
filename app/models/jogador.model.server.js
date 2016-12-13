@@ -7,6 +7,7 @@ var JogadorSchema = new Schema({
 	email: String,
 	vitorias: {type:Number, default: 0},
 	derrotas: {type:Number, default: 0},
+	empates: {type:Number, default: 0},
 	ELO: {type:Number, default: 1000, set: v => Math.round(v)}
 })
 

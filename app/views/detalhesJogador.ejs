@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Jogador</title>
+  </head>
+  <body>
+    <h2>Detalhes do jogador</h2>
+	
+	<table border-spacing="10px">
+      <tr>
+        <th>Apelido</th>
+        <th>Nome</th>
+		<th>Email</th>
+		<th>Vitórias</th>
+		<th>Derrotas</th>
+		<th>Empates</th>
+		<th>ELO Rating</th>
+      </tr>
+      <tr>
+		
+        <td><%=jogador.apelido%></td>
+        <td><%=jogador.nome%></td>
+		<td><%=jogador.email%></td>
+		<td><%=jogador.vitorias%></td>
+		<td><%=jogador.derrotas%></td>
+		<td><%=jogador.empates%></td>
+		<td><%=jogador.ELO%></td>
+		
+      </tr>
+    </table>
+	
+	<p><a href="/jogador"> <button>Voltar</button> </a></p>
+  </body>
+</html>

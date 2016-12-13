@@ -21,6 +21,7 @@ module.exports = function(){
 	
     require('../app/routes/core.routes.server.js')(app);
     require('../app/routes/jogador.routes.server.js')(app);
+	require('../app/routes/partida.routes.server.js')(app);
 	
   return app;
 }
