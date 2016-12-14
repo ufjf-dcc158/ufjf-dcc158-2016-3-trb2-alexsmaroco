@@ -2,12 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title>Lista de partidas</title>
   </head>
   <body>
     <h2>Lista de partidas</h2>
 	
-	<table border-spacing="10px">
+	<table class="table table-striped">
       <tr>
         <th>Data</th>
 		<th>Jogador 1</th>
@@ -21,15 +22,15 @@
         <td><%=partida.data%></td>
 		<td><%=partida.player01%></td>
 		<td><%=partida.player02%></td>
-		<td><a href="/partida/<%=partida._id%>"> <button>Detalhes</button> </a> </td>
+		<td><a href="/partida/<%=partida._id%>"> <button class="btn btn-default">Detalhes</button> </a> </td>
       </tr>
       <%
       }
       %>
     </table>
 	
-	<p><a href="/registroPartida"> <button>Registrar partida</button> </a></p>
-	<p><a href="/"> <button>Voltar</button> </a></p>
+	<p><a href="/registroPartida"> <button class="btn btn-default">Registrar partida</button> </a></p>
+	<p><a href="/"> <button class="btn btn-default">Voltar</button> </a></p>
 	
   </body>
 </html>
