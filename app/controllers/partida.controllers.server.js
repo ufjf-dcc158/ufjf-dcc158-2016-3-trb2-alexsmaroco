@@ -111,7 +111,7 @@ module.exports.updatePartida = function(req, res, next){
  
   var id = req.partida.id
   var vencedor = req.body.vencedor
-	if(vencedor != "" && vencedor != 'empate' && vencedor != req.partida.player01 && vencedor != req.partida.player02) {
+	if(vencedor != 'empate' && vencedor != req.partida.player01 && vencedor != req.partida.player02) {
 		res.write("Vencedor invalido!")
 		res.write("<p><a href='/partida'> <button class='btn btn-default'> Voltar </button></a></p>")
 		res.end()
