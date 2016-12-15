@@ -9,7 +9,7 @@ module.exports = function(app){
     .get(partida.listPartidas);
   app.route("/partida/:idPartida")
     .get(partida.readPartida)
-    .put(partida.updatePartida);
+    .post(partida.updatePartida);
     //.delete(partida.remove);
   app.param("idPartida", partida.getPartidaById);
 }

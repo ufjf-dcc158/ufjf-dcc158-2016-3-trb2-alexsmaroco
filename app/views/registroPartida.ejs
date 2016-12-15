@@ -6,14 +6,16 @@
     <title>Registro de partidas</title>
   </head>
   <body>
+  <div class="container">
     <h2>Registro de partidas</h2>
 	<form method="POST" action="/partida">
-	<p> Data: <input name="data" type="Date"/>  </p>
+	<p> Data: <input name="data" type="datetime-local"/>  </p>
 	<p> Jogador 1: <input name="player01" type="text"/>  </p>
 	<p> Jogador 2: <input name="player02" type="text"/>  </p>
 	<p> <input class="btn btn-default" type="submit" value="Registrar"/> </p>
 	</form>
 	
 	<p><a href="/partida"> <button class="btn btn-default">Voltar</button> </a></p>
+	</div>
   </body>
 </html>

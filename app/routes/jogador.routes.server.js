@@ -7,8 +7,8 @@ module.exports = function(app){
 		.post(jogador.createJogador)
 		.get(jogador.listJogadores);
 	app.route("/jogador/:idJogador")
-		.get(jogador.readJogador)
-		.put(jogador.updateJogador);
+		.post(jogador.updateJogador)
+		.get(jogador.readJogador);
 		//.delete(jogador.remove);
 	app.param("idJogador", jogador.getJogadorByApelido);
 

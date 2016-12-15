@@ -11,8 +11,17 @@
 	<p> <b>Data: </b> <%=partida.data%></p>
 	<p> <b>Jogador 1: </b> <%=partida.player01%></p>
 	<p> <b>Jogador 2: </b> <%=partida.player02%></p>
+	<% if(partida.vencedor == "empate") { %>
+	<p> <b>Resultado: </b> <%=partida.vencedor%></p>
+	<% } else { %>
 	<p> <b>Vencedor: </b> <%=partida.vencedor%></p>
-	
+	<% }
+		if(partida.vencedor == "") { %>
+		<form method="POST" action="/partida/<%=partida._id%>">
+		<p> Defina o vencedor(ou empate digitando 'empate')): <input type="text" name="vencedor"/> </p>
+		<p> <input type="submit" class="btn btn-default"> Finalizar partida </input>
+	</form>
+	<% } %>
 	<p><a href="/partida"> <button class="btn btn-default">Voltar</button> </a></p>
 	
   </body>

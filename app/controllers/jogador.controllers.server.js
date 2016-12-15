@@ -6,16 +6,24 @@ module.exports.registroJogador = function (req, res, next) {
 
 module.exports.createJogador = function(req, res, next){
 	res.setHeader("Content-Type", "text/html");
+	res.write("<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>")
    var jogador = new Jogador(req.body);
-   jogador.save(function (err) {
-     if(err){
-       next(err);
-     }else{
-		res.write("Jogador registrado com sucesso!")
-        res.write("<p><a href='/jogador'> Voltar </a></p>")
+   if(jogador.apelido == "" || jogador.nome == "" || jogador.email == "") {
+		res.write("Preencha todos os campos!")
+        res.write("<p><a href='/registroJogador'> <button class='btn btn-default'>Voltar </button></a></p>")
 		res.end()
-     }
-   });
+   }
+    else {
+		jogador.save(function (err) {
+			if(err){
+			next(err);
+			}else{
+				res.write("Jogador registrado com sucesso!")
+				res.write("<p><a href='/jogador'> <button class='btn btn-default'> Voltar </button></a></p>")
+				res.end()
+			}
+		})
+	}
 }
 
 
@@ -51,7 +59,6 @@ module.exports.getJogadorByApelido = function(req, res, next, id){
       res.json({});
     }else{
       req.jogador = jogador;
-	  console.log("get jogador")
       next();
     }
   });
@@ -72,7 +79,7 @@ module.exports.updateJogador = function(req, res, next){
         next(err);
       }else{
         res.write("Jogador atualizado com sucesso!")
-        res.write("<p><a href='/jogador/" + jogId + "'> Voltar </a></p>")
+        res.write("<p><a href='/jogador/" + jogId + "'> <button class='btn btn-default'> Voltar </button></a></p>")
 		res.end()
       }
     }

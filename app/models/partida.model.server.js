@@ -1,12 +1,14 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var Jogador = require('mongoose').model('Jogador');
 
 var PartidaSchema = new Schema({
 	data: Date,
 	player01: String,
+	p1id: String,
 	player02: String,
-	vencedor: {type: String, default: null}
+	p2id: String,
+	vencedor: {type: String, default:""}
 })
+
 
 mongoose.model('Partida', PartidaSchema)
