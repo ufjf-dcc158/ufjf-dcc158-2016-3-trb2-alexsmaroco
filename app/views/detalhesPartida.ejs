@@ -6,6 +6,7 @@
     <title>Partida</title>
   </head>
   <body>
+	<div class="container">
     <h2>Detalhes da partida</h2>
 	
 	<p> <b>Data: </b> <%=partida.data%></p>
@@ -13,16 +14,20 @@
 	<p> <b>Jogador 2: </b> <%=partida.player02%></p>
 	<% if(partida.vencedor == "empate") { %>
 	<p> <b>Resultado: </b> <%=partida.vencedor%></p>
-	<% } else { %>
+	<% } else if(partida.vencedor != ""){ %>
 	<p> <b>Vencedor: </b> <%=partida.vencedor%></p>
 	<% }
 		if(partida.vencedor == "") { %>
 		<form method="POST" action="/partida/<%=partida._id%>">
-		<p> Defina o vencedor(ou empate digitando 'empate')): <input type="text" name="vencedor"/> </p>
-		<p> <input type="submit" class="btn btn-default" value="Finalizar partida"/> </p>
+			<p><em> Escolha o vencedor </em></p>
+			<div class="radio"><label><input type="radio" name="vencedor" value="<%=partida.player01%>"> <%=partida.player01%></label></div>
+			<div class="radio"><label><input type="radio" name="vencedor" value="<%=partida.player02%>"> <%=partida.player02%></label></div>
+			<div class="radio"><label><input type="radio" name="vencedor" value="empate"> Empate </label></div>
+		
+			<p> <input type="submit" class="btn btn-default" value="Finalizar partida"/> </p>
 	</form>
 	<% } %>
 	<p><a href="/partida"> <button class="btn btn-default">Voltar</button> </a></p>
-	
+	</div>
   </body>
 </html>
