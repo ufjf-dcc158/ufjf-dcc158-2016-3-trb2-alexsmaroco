@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var PartidaSchema = new Schema({
-	data: Date,
+	data: String,
 	player01: String,
 	p1id: String,
 	player02: String,
