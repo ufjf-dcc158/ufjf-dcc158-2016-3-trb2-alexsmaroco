@@ -8,8 +8,8 @@ module.exports = function(app){
 		.get(jogador.listJogadores);
 	app.route("/jogador/:idJogador")
 		.post(jogador.updateJogador)
-		.get(jogador.readJogador);
-		//.delete(jogador.remove);
+		.get(jogador.readJogador)
+		.delete(jogador.removerJogador);
 	app.param("idJogador", jogador.getJogadorByApelido);
 
 }

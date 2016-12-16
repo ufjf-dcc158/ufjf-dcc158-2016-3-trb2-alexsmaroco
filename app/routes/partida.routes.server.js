@@ -10,6 +10,5 @@ module.exports = function(app){
   app.route("/partida/:idPartida")
     .get(partida.readPartida)
     .post(partida.updatePartida);
-    //.delete(partida.remove);
   app.param("idPartida", partida.getPartidaById);
 }
