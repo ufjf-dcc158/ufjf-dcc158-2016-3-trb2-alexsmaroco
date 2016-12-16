@@ -32,6 +32,11 @@
       </tr>
     </table>
 	
+	<form method="POST" action="/jogador/<%=jogador.apelido%>?_method=delete" enctype="application/x-www-form-urlencoded">
+		<input type="hidden" name="jogador" value="<%=jogador%>"/>
+		<p><button class="btn btn-default" type="submit">Remover jogador</button> <em> Remover um jogador automaticamente cancela todas as suas partidas em andamento </em></p>
+	</form>
+
 	<p><a href="/jogador"> <button class="btn btn-default">Voltar</button> </a></p>
 	</div>
   </body>

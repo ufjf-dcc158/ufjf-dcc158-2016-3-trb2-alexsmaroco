@@ -14,6 +14,7 @@
         <th>Data</th>
 		<th>Jogador 1</th>
 		<th>Jogador 2</th>
+		<th>Finalizada?</th>
       </tr>
       <%
       for(var i=0; i<partidas.length; i++){
@@ -23,6 +24,11 @@
         <td><%=partida.data%></td>
 		<td><%=partida.player01%></td>
 		<td><%=partida.player02%></td>
+		<td><%if(partida.vencedor != "") {
+		%> Sim <% 
+		} else {
+		%> Nao <% 
+		} %> </td>
 		<td><a href="/partida/<%=partida._id%>"> <button class="btn btn-default">Detalhes</button> </a> </td>
       </tr>
       <%

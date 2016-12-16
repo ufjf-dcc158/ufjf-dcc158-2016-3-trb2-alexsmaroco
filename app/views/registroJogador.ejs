@@ -9,10 +9,20 @@
   <div class="container">
     <h2>Registro de jogador</h2>
 	<form method="POST" action="/jogador">
-	<p> Nome: <input name="nome" type="text"/>  </p>
-	<p> Apelido: <input name="apelido" type="text"/>  </p>
-	<p> Email: <input name="email" type="text"/>  </p>
-	<p> <input class="btn btn-default" type="submit" value="Registrar"/> </p>
+	
+		<div class="form-group">
+			<label for="nome">Nome</label>
+			<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+		</div>
+		<div class="form-group">
+			<label for="apelido">Apelido</label>
+			<input type="text" class="form-control" id="apelido" name="apelido" placeholder="Apelido">
+		</div>
+		<div class="form-group">
+			<label for="email">Email</label>
+			<input type="text" class="form-control" id="email" name="email" placeholder="Email">
+		</div>
+		<p> <input class="btn btn-default" type="submit" value="Registrar"/> </p>
 	</form>
 	
 	<p><a href="/jogador"> <button class="btn btn-default">Voltar</button> </a></p>

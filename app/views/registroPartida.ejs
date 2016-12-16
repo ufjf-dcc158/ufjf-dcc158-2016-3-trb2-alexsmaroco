@@ -8,14 +8,25 @@
   <body>
   <div class="container">
     <h2>Registro de partidas</h2>
-	<form method="POST" action="/partida">
-	<p> Data: <input name="data" type="datetime-local"/>  </p>
-	<p> Jogador 1: <input name="player01" type="text"/>  </p>
-	<p> Jogador 2: <input name="player02" type="text"/>  </p>
-	<p> <input class="btn btn-default" type="submit" value="Registrar"/> </p>
-	</form>
 	
+	<form method="POST" action="/partida">
+		<div class="form-group">
+			<label for="data">Data</label>
+			<input type="datetime-local" class="form-control" id="data" name="data">
+		</div>
+		<div class="form-group">
+			<label for="player01">Jogador 1</label>
+			<input type="text" class="form-control" id="player01" name="player01" placeholder="Apelido">
+		</div>
+		<div class="form-group">
+			<label for="player02">Jogador 2</label>
+			<input type="password" class="form-control" id="player02" name="player02" placeholder="Apelido">
+		</div>
+		<p> <input class="btn btn-default" type="submit" value="Registrar"/> </p>
+	</form>
+		
 	<p><a href="/partida"> <button class="btn btn-default">Voltar</button> </a></p>
 	</div>
   </body>
 </html>
+
